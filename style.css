@@ -1,0 +1,290 @@
+@font-face {
+    font-family: poki;
+    src: url(./fonts/Ketchum.otf);
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poki;
+}
+
+body{
+    background-color: rgb(134, 185, 39);
+}
+
+button{
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15% 0 15%;
+}
+
+header h1{
+    font-family: poki;
+    font-size: 5rem;
+    color: rgb(250, 220, 50);
+    text-shadow:
+    2px 2px 5px blue,  
+    -2px -2px 5px blue,
+    2px -2px 5px blue, 
+    -2px 2px 5px blue;
+}
+
+.barContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+#clear{
+    color: rgb(250, 220, 50);
+    text-shadow:
+    1px 1px 0px blue,  
+    -1px -1px 0px blue,
+    1px -1px 0px blue, 
+    -1px 1px 0px blue;
+    width: 5rem;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    border: 2px solid white;
+    background-color: rgb(102, 141, 29);
+}
+.searchContainer{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.searchButton{
+    font-family: poki;
+    position: absolute;
+    width: 5%;
+    top: 50%;
+    right: 1%;
+    font-size: 1.2rem;
+    transform: translateY(-50%);
+    border: none;
+    background-color: rgb(102, 141, 29);
+    border-radius: 1rem;
+    color:  rgb(250, 220, 50);
+    text-shadow:
+    1px 1px 0px blue,  
+    -1px -1px 0px blue,
+    1px -1px 0px blue, 
+    -1px 1px 0px blue;
+}
+
+.searchButton::after{
+    position: absolute;
+    border-radius: 1rem;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+.searchButton:hover::after{
+    background-color: white;
+    opacity: .1;
+}
+
+
+.searchBar{
+    width: 50vw;
+    height: 100%;
+    border-radius: 1.5rem;
+    border: none;
+}
+
+main{
+    padding: 1rem 15% 1rem 15%;
+}
+
+.pokiContainer{
+    display: grid;
+    border-radius: 1rem;
+    width: 100%;
+    height: 80vh;
+    grid: repeat(auto-fill, minmax(50%, 1fr)) / repeat(auto-fill, minmax(33%, 1fr));
+    background-color: rgb(102, 141, 29);
+    box-shadow: 5px 5px 5px rgb(155, 214, 44);
+    padding: 1% 0 0 0;
+}
+
+.pokeCard{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.pokemon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1%;
+    width: 50%;
+    height: 90%;
+    border-radius: 1rem;
+    border: .5rem solid rgb(250, 220, 50);
+}
+
+.pokeName{
+    letter-spacing: .5rem;
+    color:  rgb(250, 220, 50);
+    text-shadow:
+    1px 1px 0px blue,  
+    -1px -1px 0px blue,
+    1px -1px 0px blue, 
+    -1px 1px 0px blue;
+}
+
+.types{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteButton{
+    position: absolute;
+    background-color: transparent;
+    top: 1%;
+    right: 1%;
+    color: white;
+    opacity: .5;
+    border: none;
+}
+
+.deleteButton:hover{
+    opacity: 1;
+}
+
+img{
+    width: 85%;
+    background: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    border: 2px solid yellow;
+}
+
+.empty{
+    background-color: transparent;
+    justify-content: center;
+    font-family: poki;
+    color: white;
+}
+
+.errorMessage{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorMessage::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: .5;
+    z-index: 0;
+}
+.errorContainer{
+    position: relative;
+    width: 25%;
+    height: 25vh;
+    background-color: white;
+    border: .5rem solid rgb(102, 141, 29);
+    z-index: 3;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: poki;
+}
+
+.closeContainer{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: transparent;
+    border: none;
+}
+
+.hide{
+    display: none;
+}
+
+.fighting{
+    color: brown;
+}
+.flying{
+    color: white;
+}
+.poison{
+    color: green;
+}
+.ground{
+    color: rgb(163, 60, 0);
+}
+.rock{
+    color: grey;
+}
+.bug{
+    color: rgb(8, 180, 16);
+}
+.ghost{
+    color: rgb(126, 171, 192);
+}
+.steel{
+    color: silver;
+}
+.fire{
+    color: rgb(216, 0, 0);
+}
+.water{
+    color: rgb(88, 88, 214);
+}
+.grass{
+    color: rgb(99, 219, 75);
+}
+.electric{
+    color: rgb(203, 219, 55);
+}
+.psychic{
+    color: pink;
+}
+.ice{
+    color: lightblue;
+}
+.dragon{
+    color: purple;
+}
+.dark{
+    color: black;
+}
+.fairy{
+    color: rgb(170, 70, 170);
+}
+.stellar{
+    color: rgb(102, 54, 190);
+}
+.unknown{
+    color: rgb(51, 0, 66);
+}
